@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            padding: 50px 100px;
+            background-color: lightblue;
+        }
+
+        h1 {
+            text-align: center;
+
+            background-color: lightblue;
+            border: 3px dotted red;
+            border-bottom-style: none;
+            display: inline-block;
+            padding: 20px;
+            border-radius: 20px 20px 0px 0px;
+            z-index: 2;
+            transform: translate(0px, 30px);
+
+        }
+
+        #container {
+            text-align: center;
+            border: 3px dotted red;
+            background-color: lightblue;
+            /* display: inline-block; */
+            padding: 50px;
+            border-radius: 0px 20px 20px 20px;
+            z-index: 1;
+            box-shadow: 10px 10px 10px 2px black;
+
+        }
+
+        .class1 {
+            display: inline-block;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .cls2 {
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        label {
+            font-size: 30px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Temperature Converter</h1>
+    <div id="container">
+
+        <div class="class1">
+            <label>Celcius: </label><br>
+            <input type="number" id="cls1" value="0" class="cls2" placeholder="Temperature in Celcius">
+        </div>
+
+
+        <div class="class1">
+            <label>Fahrenheit: </label><br>
+            <input type="number" id="cls2" value="32" class="cls2" placeholder="Temperature in Fahrenheit">
+        </div>
+    </div>
+</body>
+
+<script>
+    let celcius = document.getElementById("cls1");
+    let fahren = document.getElementById("cls2");
+
+    celcius.addEventListener('input', function () {
+        let c = this.value;
+        let f = c * 9 / 5 + 32;
+        fahren.value = f;
+    });
+
+    fahren.addEventListener('input', function () {
+        let f = this.value;
+        let c = (f - 32) * 5 / 9;
+        celcius.value = c;
+    });
+</script>
+
+</html>
